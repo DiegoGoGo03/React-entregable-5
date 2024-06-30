@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { setTrainer } from '../store/slices/trainer.slice'
 import { useNavigate } from 'react-router-dom'
 import './styles/homePage.css'
+import pokedexLogo from '../assets/pokedex-logo.png';
 
 const HomePage = () => {
   const handleFocus = () => {
@@ -29,7 +30,7 @@ const HomePage = () => {
   return (
     <div className='homepage__container'>
       <h1 className='homepage__name'>
-          <img className='homepage__image' src="../../../src/assets/pokedex-logo.png" alt="pokedex image" />
+          <img className='homepage__image' src={pokedexLogo} alt="pokedex image" />
       </h1>
       <br />
       <h2 className='homepage__saludo'>Hi trainer! <span>👋🏼</span></h2>
