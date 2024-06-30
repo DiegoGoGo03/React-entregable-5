@@ -19,18 +19,35 @@ const PokeInfo = () => {
       <figure className='pokeinfo__img'>
         <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="pokemon image" />
       </figure>
-      <ul className='pokeinfo__stats'>
-        {
-          pokemon?.stats.map(stat => (
+      <div className='pokeinfo__details'>
+        <h1 className='pokeinfo__name'>{pokemon?.name}</h1>
+        <div className='pokeinfo__types'>
+          {pokemon?.types.map(typeInfo => (
+            <span className={`pokeinfo__type ${typeInfo.type.name}`} key={typeInfo.type.name}>
+              {typeInfo.type.name}
+            </span>
+          ))}
+        </div>
+        <ul className='pokeinfo__stats'>
+          {pokemon?.stats.map(stat => (
             <li className='pokeinfo__stats-item' key={stat.stat.url}>
-              <span>{stat.stat.name}</span><span>{stat.base_stat}/250</span>
+              <span>{stat.stat.name}</span>
+              <span>{stat.base_stat}/250</span>
               <div className='outbar'>
-                <div className='inbar' style={{width: `${stat.base_stat/2.5}%`,}}></div>
+                <div className='inbar' style={{ width: `${stat.base_stat / 2.5}%` }}></div>
               </div>
             </li>
-          ))
-        }
-      </ul>
+          ))}
+        </ul>
+        <div className='pokeinfo__movements'>
+          <h2>Movements</h2>
+          <ul className='pokeinfo__movements-list'>
+            {pokemon?.moves.map(move => (
+              <li key={move.move.url} className='pokeinfo__movements-item'>{move.move.name}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </section>
   )
 }

@@ -27,7 +27,7 @@ const PokeCard = ({url}) => {
       <ul className='pokecard__types'>
         {
           pokemon?.types.map(type => (
-            <li className={`slot ${type.slot}`} key={type.type.url}>
+            <li className={`slot${type.slot}`} key={type.type.url}>
               {type.type.name}
             </li>
           ))

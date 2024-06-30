@@ -5,6 +5,13 @@ import { useNavigate } from 'react-router-dom'
 import './styles/homePage.css'
 
 const HomePage = () => {
+  const handleFocus = () => {
+    textInput.current.placeholder = ''
+  };
+
+  const handleBlur = () => {
+    textInput.current.placeholder = 'Your Name...'
+  }
 
   const dispatch = useDispatch()
 
@@ -20,13 +27,17 @@ const HomePage = () => {
   }
 
   return (
-    <div>
-      <h1>Pokedex</h1>
-      <h2>Hi trainer</h2>
-      <p>To start give me your name</p>
-      <form onSubmit={handleSubmit}>
-        <input ref={textInput} type="text" />
-        <button>Start</button>
+    <div className='homepage__container'>
+      <h1 className='homepage__name'>
+          <img className='homepage__image' src="../../../src/assets/pokedex-logo.png" alt="pokedex image" />
+      </h1>
+      <br />
+      <h2 className='homepage__saludo'>Hi trainer! <span>👋🏼</span></h2>
+      <p className='homepage__mensaje'>To start give me your name. <span className='homepage__pencil'>🖋️</span> </p>
+      <br />
+      <form className='homepage__submit' onSubmit={handleSubmit}>
+        <input className='homepage__input' placeholder='Your Name...' ref={textInput} type="text" onFocus={handleFocus} onBlur={handleBlur}/>
+        <button className='homepage__btn'>Start</button>
       </form>
     </div>
   )

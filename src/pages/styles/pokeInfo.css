@@ -1,7 +1,74 @@
-.pokeinfo__stats-item {
+/* PokeInfo.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.pokeinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.pokeinfo__img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.pokeinfo__img img {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pokeinfo__details {
+  text-align: center;
+  width: 100%;
+}
+
+.pokeinfo__name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pokeinfo__types {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pokeinfo__type {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.pokeinfo__type.planta {
+  background-color: #78c850;
+}
+
+.pokeinfo__type.venenoso {
+  background-color: #a040a0;
+}
+
+.pokeinfo__stats {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.pokeinfo__stats-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .pokeinfo__stats-item span:nth-child(2) {
@@ -9,16 +76,43 @@
 }
 
 .outbar {
-  grid-column: span 2;
-  border: 1px solid;
-  border-radius: 5px;
-  height: 20px;
-  width: 100%;
-
+  width: 70%;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 10px;
 }
 
 .inbar {
   background-color: rgb(224, 159, 36);
-  width: 50%;
-  height: 100%;
+  height: 20px;
+}
+
+/* Movements Section */
+.pokeinfo__movements {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.pokeinfo__movements h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.pokeinfo__movements-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pokeinfo__movements-item {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-transform: capitalize;
 }

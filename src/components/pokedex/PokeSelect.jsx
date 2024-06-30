@@ -18,7 +18,7 @@ const PokeSelect = ({setTypeFilter}) => {
   }
 
   return (
-    <select onChange={handleChange}>
+    <select onChange={handleChange} ref={valueSelect}>
       <option value="">All pokemos</option>
       {
         types?.results.map(type => (

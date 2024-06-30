@@ -1,0 +1,112 @@
+.homepage__container {
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+	margin-top: 15%;
+	padding: 0 10%;
+}
+
+.homepage__name {
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+}
+
+.homepage__image {
+	max-width: 100%;
+	width: 50%;
+	height: auto;
+	transition: width 0.3s ease;
+  transition: transform 0.5s;
+}
+
+.homepage__image:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s,
+              box-shadow 0.25s;  
+}
+
+
+@media (max-width: 768px) {
+	.homepage__image {
+	  width: 70%;
+	}
+}
+  
+@media (max-width: 480px) {
+	.homepage__image {
+	  width: 90%;
+	}
+}
+
+.homepage__saludo {
+  font-size: 2rem;
+  color: rgb(211, 0, 0);
+}
+
+.homepage__saludo span {
+  display: inline-block;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.homepage__mensaje {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+
+.homepage__submit {
+  box-shadow: 4px 2px 8px rgb(103, 103, 255);
+}
+
+.homepage__input {
+  border: none;
+  background-color: rgb(248, 248, 248);
+  padding: 10px 7px 10px 7px;
+  font-weight: 800;
+}
+
+.homepage__btn {
+  border: none;
+  background-color: rgb(255, 0, 0);
+  padding: 10px 7px 10px 7px;
+  font-weight: 800;
+  transition: width 0.3s ease;
+  transition: transform 0.5s;
+}
+
+.homepage__btn:hover {
+  border-color: rgb(0, 0, 0);
+  transform: scale(1.05);
+  transition: transform 0.5s;
+}
+
+.homepage__pencil {
+  position: relative;
+  display: inline-block;
+  animation: movePencil 2s infinite, writeText 2s steps(3, end);
+}
+
+@keyframes movePencil {
+  0%, 100% { left: 0; }
+  50% { left: 20px; }
+}
+
+@keyframes writeText {
+  0% { content: ''; }
+  33% { content: '_'; }
+  66% { content: '__'; }
+  100% { content: '___'; }
+}

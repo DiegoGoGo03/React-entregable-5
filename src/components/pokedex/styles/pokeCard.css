@@ -1,13 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 .pokecard {
   position: relative;
   overflow: hidden;
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
   width: 250px;
   border: 5px solid;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  transition: transform 0.5s,
+              box-shadow 0.25s; 
+}
+
+.pokecard:hover {
+  background-color: rgba(255, 255, 247, 0.504);
+  transform: scale(1.03);
+  box-shadow: 0 0 10px;
+  transition: transform 0.5s,
+              box-shadow 0.25s;  
 }
 
 .pokecard__back {
@@ -70,6 +83,66 @@
   background-color: rgb(0, 124, 249);
 }
 
+.normal {
+  background-color: rgb(220, 220, 220);
+}
 
+.fighting {
+  background-color: rgb(131, 226, 255);
+}
 
+.flying {
+  background-color: rgb(0, 117, 152);
+}
 
+.poison {
+  background-color: rgb(0, 210, 32);
+}
+
+.ground {
+  background-color: rgb(255, 205, 43);
+}
+
+.rock {
+  background-color: rgb(106, 0, 0);
+}
+
+.bug {
+  background-color: rgb(29, 29, 29);
+}
+
+.ghost {
+  background-color: rgb(255, 102, 245);
+}
+
+.steel {
+  background-color: rgba(221, 85, 83, 0.727);
+}
+
+.electric {
+  background-color: rgb(199, 249, 0);
+}
+
+.psychic {
+  background-color: rgb(0, 245, 183);
+}
+
+.ice {
+  background-color: rgb(251, 103, 103);
+}
+
+.dragon {
+  background-color: rgb(249, 0, 224);
+}
+
+.dark {
+  background-color: rgb(91, 91, 91);
+}
+
+.fairy {
+  background-color: rgb(126, 147, 141);
+}
+
+.stellar {
+  background-color: rgb(165, 163, 100);
+}
