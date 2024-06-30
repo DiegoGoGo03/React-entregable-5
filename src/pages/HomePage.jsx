@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { setTrainer } from '../store/slices/trainer.slice'
 import { useNavigate } from 'react-router-dom'
 import './styles/homePage.css'
-import pokedexLogo from '../assets/pokedex-logo.png';
+import pokedexLogo from '@/assets/pokedex-logo.png';
 
 const HomePage = () => {
   const handleFocus = () => {
