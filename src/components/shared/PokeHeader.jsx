@@ -6,7 +6,7 @@ const PokeHeader = () => {
     <div className='pokeheader'>
       <div className='pokeheader__red'>
         <figure className='pokeheader__img'>
-          <img src="../../../src/assets/pokedex-logo.png" alt="pokedex image" />
+          <img src="../assets/pokedex-logo.png" alt="pokedex image" />
         </figure>
       </div>
       <div className='pokeheader__black'>
