@@ -11,6 +11,9 @@ const Pokedex = () => {
   const [inputValue, setInputValue] = useState('')
   const [typeFilter, setTypeFilter] = useState('')
 
+  const [paginaActual, setPaginaActual] = useState(1)
+  const pokemonsPorPagina = 10
+
   const [pokemons, getPokemons, getType] = useFetch()
 
   useEffect(() => {
@@ -29,13 +32,24 @@ const Pokedex = () => {
     event.preventDefault()
     setInputValue(textInput.current.value.trim().toLowerCase())
     textInput.current.value = ''
+    setPaginaActual(1)
   }
 
   const cbFilter = (poke) => {
     return poke.name.includes(inputValue)
-
   }
   
+  const pokemonsFiltrados = pokemons?.results.filter(cbFilter) || []
+  const indexOfLastPokemon = paginaActual * pokemonsPorPagina
+  const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPorPagina
+  const currentPokemons = pokemonsFiltrados.slice(indexOfFirstPokemon, indexOfLastPokemon)
+
+  const totalPages = Math.ceil(pokemonsFiltrados.length / pokemonsPorPagina);
+
+  const handleClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  }
+
   return (
     <div className='pokedex'>
       <h3 className='pokedex__wave'><span>Welcome {trainer}, </span>You could find your favorite pokemon here, let's go!</h3>
@@ -44,23 +58,27 @@ const Pokedex = () => {
           <input ref={textInput} type="text" />
           <button>Search</button>
         </form>
-        <PokeSelect
-          setTypeFilter={setTypeFilter}
-        />
+        <PokeSelect setTypeFilter={setTypeFilter} />
       </div>
       <div className='pokedex__container'>
-        {
-          pokemons?.results.filter(cbFilter).map((poke) => (
-            <PokeCard
-              key={poke.url}
-              url={poke.url}
-            />
-          ))
-        }
-
+        {currentPokemons.map((poke) => (
+          <PokeCard key={poke.url} url={poke.url} />
+        ))}
       </div>
+      <div className='pokedex__pagination'>
+        {[...Array(totalPages).keys()].map(number => (
+          <button
+            key={number + 1}
+            onClick={() => handleClick(number + 1)}
+            className={paginaActual === number + 1 ? 'active' : ''}
+          >
+            {number + 1}
+          </button>
+        ))}
+      </div>
+      <br />
     </div>
-  )
-}
+  );
+};
 
-export default Pokedex
+export default Pokedex;

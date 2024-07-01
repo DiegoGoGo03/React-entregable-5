@@ -34,7 +34,7 @@ const HomePage = () => {
       </h1>
       <br />
       <h2 className='homepage__saludo'>Hi trainer! <span>👋🏼</span></h2>
-      <p className='homepage__mensaje'>To start give me your name. <span className='homepage__pencil'>🖋️</span> </p>
+      <p className='homepage__mensaje'>To start give me your name <span className="homepage__pencil-container"><span className="homepage__text"></span><span className="homepage__pencil">✏️</span></span> </p>
       <br />
       <form className='homepage__submit' onSubmit={handleSubmit}>
         <input className='homepage__input' placeholder='Your Name...' ref={textInput} type="text" onFocus={handleFocus} onBlur={handleBlur}/>

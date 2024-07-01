@@ -17,3 +17,42 @@
   gap: 20px;
 }
 
+.pokedex__pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.pokedex__pagination button {
+  font-weight: 700;
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #ebeaea;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pokedex__pagination button:hover {
+  background-color: #c6c6c6;
+}
+
+.pokedex__pagination button.active {
+  background-color: #e20000;
+  color: hwb(0 98% 2%);
+}
+
+/*______________________Pantallas pequeñas____________________ */
+@media (max-width: 400px) {
+  .pokedex__pagination {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pokedex__pagination button {
+    width: 100%;
+    margin: 2px 0;
+  }
+}
