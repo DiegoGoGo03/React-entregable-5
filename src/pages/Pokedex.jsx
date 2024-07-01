@@ -56,7 +56,7 @@ const Pokedex = () => {
   const totalPages = Math.ceil(pokemonsFiltrados.length / pokemonsPorPagina);
 
   const handleClick = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    setPaginaActual(pageNumber);
   }
 
   
