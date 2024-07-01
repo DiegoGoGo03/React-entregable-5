@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -45,16 +45,16 @@
 .pokeinfo__type {
   padding: 5px 10px;
   border-radius: 5px;
-  color: #fff;
+  color: rgb(255, 255, 255);
   text-transform: capitalize;
 }
 
 .pokeinfo__type.planta {
-  background-color: #78c850;
+  background-color: rgb(120, 200, 80);
 }
 
 .pokeinfo__type.venenoso {
-  background-color: #a040a0;
+  background-color: rgb(160, 64, 160);
 }
 
 .pokeinfo__stats {
@@ -76,7 +76,7 @@
 
 .outbar {
   width: 70%;
-  background-color: #f1f1f1;
+  background-color: rgb(241, 241, 241);
   border-radius: 10px;
   overflow: hidden;
   margin-left: 10px;
@@ -87,11 +87,10 @@
   height: 20px;
 }
 
-/* Movements Section */
 .pokeinfo__movements {
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid rgb(204, 204, 204);
 }
 
 .pokeinfo__movements h2 {
@@ -109,8 +108,8 @@
 }
 
 .pokeinfo__movements-item {
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(221, 221, 221);
   border-radius: 10px;
   padding: 5px 10px;
   text-transform: capitalize;
