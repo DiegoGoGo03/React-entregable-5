@@ -26,14 +26,6 @@ function App() {
 
     </div>
         
- 
-
-    
-    
-
-
-
-
 
   )
 }

@@ -116,6 +116,8 @@
   text-transform: capitalize;
 }
 
+
+/*______________________BOTÓN ATRÁS____________________ */
 .pokeinfo__back-button {
   display: block;
   margin: 10px auto;

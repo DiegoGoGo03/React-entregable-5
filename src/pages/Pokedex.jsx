@@ -4,9 +4,18 @@ import useFetch from '../hooks/useFetch'
 import PokeCard from '../components/pokedex/PokeCard'
 import PokeSelect from '../components/pokedex/PokeSelect'
 import './styles/pokedex.css'
+import { useNavigate } from 'react-router-dom'
 
 const Pokedex = () => {
   
+  const handleFocus = () => {
+    textInput.current.placeholder = ''
+  }
+
+  const handleBlur = () => {
+    textInput.current.placeholder = 'Your Pokemon Name...'
+  }
+
   const trainer = useSelector((store) => store.trainer)
   const [inputValue, setInputValue] = useState('')
   const [typeFilter, setTypeFilter] = useState('')
@@ -50,13 +59,23 @@ const Pokedex = () => {
     setCurrentPage(pageNumber);
   }
 
+  
+  const navigate = useNavigate()
+
+  const handleBackClick = () => {
+    navigate('/#')
+  }
+
   return (
     <div className='pokedex'>
+      <button className="pokedex__back-button" onClick={handleBackClick}>
+        Back to Home
+      </button>
       <h3 className='pokedex__wave'><span>Welcome {trainer}, </span>You could find your favorite pokemon here, let's go!</h3>
       <div className='pokedex__filters'>
         <form onSubmit={handleSubmit}>
-          <input ref={textInput} type="text" />
-          <button>Search</button>
+          <input className='pokedex__input' ref={textInput} type="text" placeholder='Your Pokemon Name...' onFocus={handleFocus} onBlur={handleBlur}/>
+          <button className='pokedex__btn__search'>Search</button>
         </form>
         <PokeSelect setTypeFilter={setTypeFilter} />
       </div>
